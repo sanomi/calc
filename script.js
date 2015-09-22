@@ -122,7 +122,10 @@ $(document).ready( function(){
 	    case $operatorBtn === "+": answer = num1 + num2;break;
 	    case $operatorBtn === "-": answer = num1 - num2;
 	  }
-	  return answer.toString();
+	  if (answer !== 0) {
+	  	answer = answer.toFixed(12).replace(/\.\d*0+$/, '');
+	  }
+	  return answer;
 	}
 	$(document).click(function() {
 	console.log(num1, $operatorBtn, num2);
